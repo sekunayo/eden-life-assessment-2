@@ -1,0 +1,489 @@
+// OUR Z-INDEX SHOULD BE USED THIS WAY. SO WE DON'T HAVE DIFFERENT Z-INDEX FLYING AROUND
+// use @include z-index(fill-page); for example
+@use "sass:math";
+
+$z-index: (
+  max-index: 9999999999,
+  fill-page: 60,
+  modal: 50,
+  dropdown-menu: 40,
+  navigation: 30,
+  underlay: 20,
+  overlay: 10,
+  normal: 5,
+  behind: -1,
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+// Z INDEX
+
+@mixin landscape-mode {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin responsive($breakpoint) {
+  //mobile
+
+  @if $breakpoint==phone {
+    @media only screen and (max-width: 51.2494rem) {
+      @content;
+    }
+  }
+}
+
+@mixin responsiveMin($breakpoint) {
+  //desktop
+
+  @if $breakpoint==desktop {
+    @media only screen and (min-width: 51.25rem) {
+      @content;
+    }
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==mini-phone {
+    @media only screen and (max-width: 21.875rem) {
+      @content;
+    }
+
+    // < 350px
+  }
+
+  @if $breakpoint==smallest-phone {
+    @media only screen and (max-width: 23.4375rem) {
+      @content;
+    }
+
+    // < 375px
+  }
+
+  @if $breakpoint==smaller-phone {
+    @media only screen and (max-width: 26.5625rem) {
+      @content;
+    }
+
+    // < 425px
+  }
+
+  @if $breakpoint==small-phone {
+    @media only screen and (max-width: 31.25rem) {
+      @content;
+    }
+
+    // < 500px
+  }
+
+  @if $breakpoint==phone {
+    @media only screen and (max-width: 7.5rem) {
+      @content;
+    }
+
+    // < 600px
+  }
+
+  @if $breakpoint==tab {
+    @media only screen and (max-width: 50rem) {
+      @content;
+    }
+
+    // < 800px
+  }
+
+  @if $breakpoint==big-tab {
+    @media only screen and (max-width: 62.5rem) {
+      @content;
+    }
+
+    // < 1000px
+  }
+
+  @if $breakpoint==mid-laptop {
+    @media only screen and (max-width: 70rem) {
+      @content;
+    }
+
+    // < 1120px
+  }
+
+  @if $breakpoint==mini-laptop {
+    @media only screen and (max-width: 75rem) {
+      @content;
+    }
+
+    // < 1200px
+  }
+
+  @if $breakpoint==laptop {
+    @media only screen and (max-width: 81.25rem) {
+      @content;
+    }
+
+    // < 1300px
+  }
+
+  @if $breakpoint==max-laptop {
+    @media only screen and (max-width: 95rem) {
+      @content;
+    }
+
+    // > 1430px
+  }
+
+  @if $breakpoint==desktop {
+    @media only screen and (max-width: 112.5rem) {
+      @content;
+    }
+
+    // 1800px <
+  }
+}
+@mixin respondMin($breakpoint) {
+  @if $breakpoint==mini-phone {
+    @media only screen and (min-width: 21.875rem) {
+      @content;
+    }
+
+    // > 350px
+  }
+
+  @if $breakpoint==smallest-phone {
+    @media only screen and (min-width: 23.4375rem) {
+      @content;
+    }
+
+    // > 375px
+  }
+
+  @if $breakpoint==smaller-phone {
+    @media only screen and (min-width: 26.5625rem) {
+      @content;
+    }
+
+    // > 425px
+  }
+
+  @if $breakpoint==small-phone {
+    @media only screen and (min-width: 31.25rem) {
+      @content;
+    }
+
+    // > 500px
+  }
+
+  @if $breakpoint==phone {
+    @media only screen and (min-width: 7.5rem) {
+      @content;
+    }
+
+    // > 600px
+  }
+
+  @if $breakpoint==big-tab {
+    @media only screen and (min-width: 62.5rem) {
+      @content;
+    }
+
+    // > 1000px
+  }
+
+  @if $breakpoint==mid-laptop {
+    @media only screen and (min-width: 70rem) {
+      @content;
+    }
+
+    // > 1120px
+  }
+
+  @if $breakpoint==mini-laptop {
+    @media only screen and (min-width: 75rem) {
+      @content;
+    }
+
+    // > 1200px
+  }
+
+  @if $breakpoint==laptop {
+    @media only screen and (min-width: 85.375rem) {
+      @content;
+    }
+
+    // > 1366px
+  }
+
+  @if $breakpoint==max-laptop {
+    @media only screen and (min-width: 95rem) {
+      @content;
+    }
+
+    // > 1430px
+  }
+
+  @if $breakpoint==desktop {
+    @media only screen and (min-width: 112.5rem) {
+      @content;
+    }
+
+    // > 1800px
+  }
+}
+
+// HIDE SCROLLBAR
+@mixin scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// SHOW SCROLLBAR
+@mixin scrollbar-show(
+  $barWidth,
+  $borderWidth,
+  $bar-color,
+  $radius,
+  $track-bg,
+  $thumb-bg
+) {
+  -ms-overflow-style: block;
+
+  &::-webkit-scrollbar {
+    width: $barWidth;
+    border: $borderWidth solid $bar-color;
+    border-radius: $radius;
+    display: block;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: $track-bg;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-bg;
+  }
+}
+
+@mixin position-absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin position-fixed-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin border-radius($pixel...) {
+  border-radius: $pixel;
+  -webkit-border-radius: $pixel;
+  -moz-border-radius: $pixel;
+  -ms-border-radius: $pixel;
+  -o-border-radius: $pixel;
+}
+
+@mixin filter($value) {
+  filter: $value();
+  -webkit-filter: $value();
+}
+
+//   SCALE ELEMENT FOR HOVER EFFECT
+@mixin scale($scale) {
+  transform: scale($scale);
+  -webkit-transform: scale($scale);
+  -moz-transform: scale($scale);
+  -ms-transform: scale($scale);
+  -o-transform: scale($scale);
+}
+
+@mixin transition {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+@mixin transition-color {
+  transition: color 0.3s ease-out;
+  -webkit-transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  -ms-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+}
+
+// FLEX FLOW
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+// FLEX SPACE BETWEEN
+@mixin flex-space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// FLEX ROW-ALONE
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+
+//FLEX COLUMN
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// FLEX COLUMN-ALONE
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+
+// GRID COLUMN-ALONE
+@mixin grid-column($repeat, $size) {
+  display: grid;
+  grid-template-columns: repeat($repeat, $size);
+}
+
+// GRID ROW-ALONE
+@mixin grid-row($repeat, $size) {
+  display: grid;
+  grid-template-rows: repeat($repeat, $size);
+}
+
+//GRID (ROW AND COLUMN)
+@mixin grid($repeat, $size) {
+  display: grid;
+  grid-template-columns: repeat($repeat, $size);
+  grid-template-rows: repeat($repeat, $size);
+}
+
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+
+@mixin placeholder($color) {
+  /* WebKit, Edge */
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  /* Firefox 4-18 */
+  &:-moz-placeholder {
+    color: $color;
+  }
+
+  /* Firefox 19+ */
+  &::-moz-placeholder {
+    color: $color;
+  }
+
+  /* IE 10-11 */
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+
+  /* Edge */
+  &::-ms-input-placeholder {
+    color: $color;
+  }
+
+  /* MODERN BROWSER */
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-ms-input-placeholder {
+    color: $color;
+  }
+  &::placeholder {
+    color: $color;
+  }
+}
+
+@mixin skeleton {
+  background-image: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 80%
+    ),
+    linear-gradient(lightgray 100%, transparent 0);
+
+  background-repeat: no-repeat;
+  background-size: 100px 100%, 100% 100%;
+  background-position: 0 0, 0 0;
+
+  animation: shine 1s infinite;
+
+  @keyframes shine {
+    to {
+      background-position: 300% 0, 0 0;
+    }
+  }
+}
+
+@mixin center-column {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  @include respond(big-tab) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@mixin place-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@mixin place-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin line-clamp($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
