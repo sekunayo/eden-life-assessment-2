@@ -1,0 +1,49 @@
+@import "./styles/style.scss";
+
+.app {
+  display: grid;
+  grid-template-columns: 28px 1fr 28px;
+
+  &__container {
+    grid-column: 2/3;
+  }
+
+  &__header {
+    @include row;
+    &-image {
+      margin-right: 10px;
+      height: 35px;
+      width: 35px;
+      @include border-radius(50%);
+      background-color: pink;
+    }
+  }
+
+  &__schedule {
+    @include flex-space-between;
+    margin-top: 25px;
+    &-button {
+      background-color: rgba($col-primary, 0.05);
+      @include border-radius(13px);
+      width: fit-content;
+      padding: 5px 12px 5px 13px;
+      border: 1px solid $col-primary;
+      @include flex-row;
+      font-size: 0.75rem;
+      line-height: 0.9375rem;
+      font-weight: 400;
+      color: $col-primary-2;
+      height: 25px;
+      box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr 115px;
+
+    &-description {
+      padding: 15px;
+    }
+  }
+}
