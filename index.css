@@ -418,9 +418,112 @@ button:hover {
   display: grid;
   -ms-grid-columns: 1fr 115px;
       grid-template-columns: 1fr 115px;
+  height: 64px;
+  margin-top: 24px;
+}
+
+.app__info-discounted-price {
+  text-decoration: line-through;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+
+.app__info-actual-price {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+}
+
+.app__info-button {
+  border-radius: 0px 6px 6px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+.app__info-primary {
+  background-color: rgba(255, 157, 0, 0.1);
+}
+
+.app__info-primary button {
+  background-color: #ff9d00;
+}
+
+.app__info-secondary {
+  background-color: rgba(0, 194, 103, 0.1);
+}
+
+.app__info-secondary button {
+  background-color: #00c267;
 }
 
 .app__info-description {
-  padding: 15px;
+  padding-left: 15px;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app__info-description-content {
+  color: #1b1b1b;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-style: normal;
+}
+
+.app__info-description-content span {
+  font-weight: 600;
+}
+
+.app__getting-started {
+  padding: 20px 0px 32px 20px;
+  height: auto;
+  width: 100%;
+  background-color: rgba(207, 236, 255, 0.5);
+  margin-top: 30px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.app__getting-started-subtitle {
+  color: #383838;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 5px;
+}
+
+.app__getting-started-title {
+  color: #1b1b1b;
+  font-size: 1.0625rem;
+  line-height: 1.25rem;
 }
 /*# sourceMappingURL=index.css.map */

@@ -41,9 +41,87 @@
   &__info {
     display: grid;
     grid-template-columns: 1fr 115px;
+    height: 64px;
+    margin-top: 24px;
+
+    &-discounted-price {
+      text-decoration: line-through;
+      font-size: 0.875rem;
+      line-height: 1.0625rem;
+      font-weight: 400;
+      margin-bottom: 3px;
+    }
+
+    &-actual-price {
+      font-weight: 600;
+      font-size: 0.875rem;
+      line-height: 1.0625rem;
+    }
+    &-button {
+      border-radius: 0px 6px 6px 0px;
+      @include flex-column;
+      width: 100%;
+      height: 100%;
+      color: $col-white;
+    }
+
+    &-primary {
+      background-color: rgba($col-primary, 0.1);
+
+      & button {
+        background-color: $col-primary;
+      }
+    }
+
+    &-secondary {
+      background-color: rgba($col-secondary, 0.1);
+
+      & button {
+        background-color: $col-secondary;
+      }
+    }
 
     &-description {
-      padding: 15px;
+      padding-left: 15px;
+      width: 100%;
+      height: 100%;
+      @include row;
+      align-items: center;
+
+      &-content {
+        color: $col-dark-2;
+        font-weight: 300;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-style: normal;
+
+        & span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &__getting-started {
+    padding: 20px 0px 32px 20px;
+    height: auto;
+    width: 100%;
+    background-color: rgba($col-secondary-2, 0.5);
+    margin-top: 30px;
+    @include border-radius(6px);
+
+    &-subtitle {
+      color: $col-dark-3;
+      font-weight: 300;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      margin-top: 5px;
+    }
+
+    &-title {
+      color: $col-dark-2;
+      font-size: 1.0625rem;
+      line-height: 1.25rem;
     }
   }
 }
