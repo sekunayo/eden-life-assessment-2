@@ -1,4 +1,5 @@
-$font: "Nunito", sans-serif;
+$PT-Serif: "PT Serif", serif;
+$Cerebri: "Cerebri Sans", sans-serif;
 
 $col-white: #fff;
 $col-black: #000;
@@ -8,12 +9,20 @@ $col-black: #000;
 $col-dark: #121212;
 $col-dark-2: #1b1b1b;
 $col-dark-3: #383838;
+$col-dark-4: #333;
+$col-dark-5: #303030;
 
 //primary colors
 
 $col-primary: #ff9d00;
 $col-primary-2: #e78f00;
+$col-primary-3: #ff682a;
+$col-primary-4: #ffb48f;
 
 //secondary
 $col-secondary: #00c267;
 $col-secondary-2: #cfecff;
+$col-secondary-3: rgba(190, 164, 255, 0.7);
+$col-secondary-4: rgba(255, 146, 101, 0.7);
+$col-secondary-5: #8a5cff;
+$col-secondary-6: rgba(244, 244, 244, 0.75);

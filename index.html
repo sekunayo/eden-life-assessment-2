@@ -10,61 +10,183 @@
   <body>
     <section class="app">
       <div class="app__container">
-        <header class="app__header">
-          <div class="app__header-image"></div>
-          <h1 class="app__header-title">Good Morning Silm!</h1>
-        </header>
+        <div class="app__container-inner">
+          <header class="app__header">
+            <div class="app__header-image">
+              <img src="./assets/images/profile.png" alt="profile" />
+            </div>
+            <h1 class="app__header-title">Good Morning Silm!</h1>
+          </header>
 
-        <div class="app__schedule">
-          <h3 class="app__schedule-title">Schedule</h3>
-          <button
-            class="app__schedule-button"
-            type="button"
-            aria-label="app__schedule-button"
-          >
-            Reconfigure Services
-          </button>
-        </div>
-
-        <div class="app__info app__info-secondary">
-          <div class="app__info-description">
-            <p class="app__info-description-content">
-              Your account is inactive. <br /><span>15% off</span> offer until
-              June 23.
-            </p>
+          <div class="app__schedule">
+            <h3 class="app__schedule-title">Schedule</h3>
+            <button
+              class="app__schedule-button"
+              type="button"
+              aria-label="app__schedule-button"
+            >
+              Reconfigure Services
+            </button>
           </div>
-          <button
-            type="button"
-            aria-label="app__info-button"
-            class="app__info-button"
-          >
-            <span class="app__info-discounted-price">N75,000</span>
-            <span class="app__info-actual-price">Pay N62,800</span>
-          </button>
-        </div>
 
-        <div class="app__info app__info-primary">
-          <div class="app__info-description">
-            <p class="app__info-description-content">
-              View your meals for the week.
-            </p>
+          <div class="app__info app__info-secondary">
+            <div class="app__info-description">
+              <p class="app__info-description-content">
+                Your account is inactive. <br /><span>15% off</span> offer until
+                June 23.
+              </p>
+            </div>
+            <button
+              type="button"
+              aria-label="app__info-button"
+              class="app__info-button"
+            >
+              <span class="app__info-discounted-price">N75,000</span>
+              <span class="app__info-actual-price">Pay N62,800</span>
+            </button>
           </div>
-          <button
-            type="button"
-            aria-label="app__info-button"
-            class="app__info-button"
-          >
-            Check ‘em
-          </button>
-        </div>
 
-        <div class="app__getting-started">
-          <h2 class="app__getting-started-title">Getting Started</h2>
-          <p class="app__getting-started-subtitle">Let’s answer any questions you have left!</p>
-          <div class="app__getting-started-main">
-              <div class="app__getting-started-main-icon">
-                  a
+          <div class="app__info app__info-primary">
+            <div class="app__info-description">
+              <p class="app__info-description-content">
+                View your meals for the week.
+              </p>
+            </div>
+            <button
+              type="button"
+              aria-label="app__info-button"
+              class="app__info-button"
+            >
+              Check ‘em
+            </button>
+          </div>
+
+          <div class="app__getting-started">
+            <h2 class="app__getting-started-title">Getting Started</h2>
+            <p class="app__getting-started-subtitle">
+              Let’s answer any questions you have left!
+            </p>
+            <div class="app__getting-started-main">
+              <div class="app__getting-started-main-first">
+                <div class="app__getting-started-main-first-icon">
+                  <div class="app__getting-started-main-first-icon-inner">
+                    <img src="./assets/images/call.png" alt="call" />
+                  </div>
+                </div>
+
+                <p class="app__getting-started-main-first-text">
+                  Set up a call with your gardener
+                </p>
+                <a class="app__getting-started-main-first-link" href="#">
+                  <span class="app__getting-started-main-first-link-text"
+                    >Do it</span
+                  >
+                  <span class="app__getting-started-main-first-link-icon">
+                    <img
+                      alt="call-arrow"
+                      src="./assets/images/call-arrow.png"
+                    /> </span
+                ></a>
               </div>
+              <div class="app__getting-started-main-second">
+                <div class="app__getting-started-main-second-icon">
+                  <div class="app__getting-started-main-second-icon-inner">
+                    <img src="./assets/images/play.png" alt="play" />
+                  </div>
+                </div>
+                <p class="app__getting-started-main-second-text">
+                  Lose yourself to this video
+                </p>
+                <a class="app__getting-started-main-second-link" href="#"
+                  ><span class="app__getting-started-main-second-link-text"
+                    >Play</span
+                  >
+                  <span class="app__getting-started-main-second-link-icon">
+                    <img
+                      alt="play-arrow"
+                      src="./assets/images/play-arrow.png"
+                    />
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="app__daily-schedule">
+            <h2 class="app__daily-schedule-heading">Tomorrow</h2>
+            <div class="app__daily-schedule-container">
+              <div class="app__daily-schedule-box">
+                <p class="app__daily-schedule-time">9 - 10am</p>
+                <div class="app__daily-schedule-content-box">
+                  <p class="app__daily-schedule-content-box-text">
+                    Your cleaner is coming in to give your apartment the looks.
+                  </p>
+                </div>
+              </div>
+              <div class="app__daily-schedule-box">
+                <p class="app__daily-schedule-time">9 - 10am</p>
+                <div class="app__daily-schedule-content-box">
+                  <p class="app__daily-schedule-content-box-text">
+                    Your cleaner is coming in to give your apartment the looks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="app__footer">
+        <nav class="app__footer-menu">
+          <ul>
+            <li class="app__footer-menu-item">
+              <a class="app__footer-menu-item-link">
+                <div class="app__footer-menu-item-icon">
+                  <img src="./assets/images/schedule.png" alt="schedule" />
+                </div>
+                <p class="app__footer-menu-item-text">Schedule</p>
+              </a>
+            </li>
+            <li class="app__footer-menu-item">
+              <a class="app__footer-menu-item-link">
+                <div class="app__footer-menu-item-icon">
+                  <img src="./assets/images/history.png" alt="history" />
+                </div>
+                <p class="app__footer-menu-item-text">History</p>
+              </a>
+            </li>
+            <li class="app__footer-menu-item">
+              <a class="app__footer-menu-item-link">
+                <div class="app__footer-menu-item-icon">
+                  <img
+                    src="./assets/images/notifications.png"
+                    alt="notifications"
+                  />
+                </div>
+                <p class="app__footer-menu-item-text">Notifications</p>
+              </a>
+            </li>
+            <li class="app__footer-menu-item">
+              <a class="app__footer-menu-item-link">
+                <div class="app__footer-menu-item-icon">
+                  <img src="./assets/images/chat.png" alt="chat" />
+                </div>
+                <p class="app__footer-menu-item-text">Chat</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+      <div class="meal__menu-modal">
+        <div class="meal__menu-modal-container">
+          <div class="meal__menu">
+            <header class="meal__menu-header">
+              <h1 class="meal__menu-header-title">Today’s Meals
+              </h1>
+              <div class="meal__menu-header-icon">
+                a
+              </div>
+            </header>
+            <div class="meal__menu-main"></div>
           </div>
         </div>
       </div>
