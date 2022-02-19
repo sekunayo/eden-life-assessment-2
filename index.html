@@ -46,7 +46,7 @@
             </button>
           </div>
 
-          <div class="app__info app__info-primary">
+          <div id="viewMeals" class="app__info app__info-primary">
             <div class="app__info-description">
               <p class="app__info-description-content">
                 View your meals for the week.
@@ -61,6 +61,100 @@
             </button>
           </div>
 
+          <!-- <div class="meal__menu-modal">
+            <div class="meal__menu-modal-container">
+              <div class="meal__menu">
+                <header class="meal__menu-header">
+                  <h1 class="meal__menu-header-title">Today’s Meals</h1>
+                  <button type="button" aria-label="close button" class="meal__menu-header-icon">a</button>
+                </header>
+                <div class="meal__menu-main">
+                  <div class="meal__menu-box">
+                    <div class="meal__menu-box-image">
+                      <img src="./assets/images/akara.png" alt="akara" />
+                    </div>
+                    <div class="meal__menu-box-description">
+                      <h1 class="meal__menu-box-description-title">
+                        Akara & Pap
+                      </h1>
+                      <p class="meal__menu-box-description-content">
+                        Carbohydrate
+                      </p>
+                    </div>
+                  </div>
+                  <div class="meal__menu-box">
+                    <div class="meal__menu-box-image">
+                      <img src="./assets/images/jollof-rice.png" alt="jollof" />
+                    </div>
+                    <div class="meal__menu-box-description">
+                      <h1 class="meal__menu-box-description-title">
+                        Jollof Rice
+                      </h1>
+                      <p class="meal__menu-box-description-content">Protein</p>
+                    </div>
+                  </div>
+                  <div class="meal__menu-box">
+                    <div class="meal__menu-box-image">
+                      <img src="./assets/images/gaston.png" alt="gaston" />
+                    </div>
+                    <div class="meal__menu-box-description">
+                      <h1 class="meal__menu-box-description-title">
+                        Gastonton
+                      </h1>
+                      <p class="meal__menu-box-description-content">
+                        Carbohydrate
+                      </p>
+                    </div>
+                  </div>
+                  <div class="meal__menu-box">
+                    <div class="meal__menu-box-image">
+                      <img src="./assets/images/port.png" alt="port" />
+                    </div>
+                    <div class="meal__menu-box-description">
+                      <h1 class="meal__menu-box-description-title">
+                        Port Domenic
+                      </h1>
+                      <p class="meal__menu-box-description-content">
+                        Carbohydrate
+                      </p>
+                    </div>
+                  </div>
+                  <div class="meal__menu-box">
+                    <div class="meal__menu-box-image">
+                      <img
+                        src="./assets/images/careville.png"
+                        alt="carleeville"
+                      />
+                    </div>
+                    <div class="meal__menu-box-description">
+                      <h1 class="meal__menu-box-description-title">
+                        Carleeville
+                      </h1>
+                      <p class="meal__menu-box-description-content">
+                        Fat & Oils
+                      </p>
+                    </div>
+                  </div>
+                  <div class="meal__menu-box">
+                    <div class="meal__menu-box-image">
+                      <img
+                        src="./assets/images/south.png"
+                        alt="South Chesleyton"
+                      />
+                    </div>
+                    <div class="meal__menu-box-description">
+                      <h1 class="meal__menu-box-description-title">
+                        South Chesleyton
+                      </h1>
+                      <p class="meal__menu-box-description-content">
+                        Vegetable
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
           <div class="app__getting-started">
             <h2 class="app__getting-started-title">Getting Started</h2>
             <p class="app__getting-started-subtitle">
@@ -135,6 +229,104 @@
           </div>
         </div>
       </div>
+
+      <div class="modal">
+        <div class="modal__container">
+          <button class="modal__close">Close</button>
+          <div class="modal__header">
+            <h1 class="modal__header-title">Today’s Meals</h1>
+          </div>
+          <div class="modal__content">
+            <ul class="modal__content-items">
+              <li class="modal__content-item">
+                <div class="modal__content-item-img blue-background">
+                  <img src="./assets/images/akara.png" alt="akara" />
+                </div>
+                <div class="modal__content-item-description">
+                  <h1 class="modal__content-item-description-title">
+                    Akara & Pap
+                  </h1>
+                  <p class="modal__content-item-description-content">
+                    Carbohydrate
+                  </p>
+                </div>
+              </li>
+              <li class="modal__content-item">
+                <div class="modal__content-item-img pink-background">
+                  <img src="./assets/images/jollof-rice.png" alt="jollof rice" />
+                </div>
+                <div class="modal__content-item-description">
+                  <h1 class="modal__content-item-description-title">
+                    Jollof Rice
+                  </h1>
+                  <p class="modal__content-item-description-content">Protein</p>
+                </div>
+              </li>
+              <li class="modal__content-item">
+                <div class="modal__content-item-img">
+                  <img src="./jollof-rice.png" alt="" />
+                </div>
+                <div class="modal__content-item-description">
+                  <h1 class="modal__content-item-description-title">
+                    Gastonton
+                  </h1>
+                  <p class="modal__content-item-description-content">
+                    Carbohydrate
+                  </p>
+                </div>
+              </li>
+              <li class="modal__content-item">
+                <div class="modal__content-item-img">
+                  <img src="./gaston.png" alt="" />
+                </div>
+                <div class="modal__content-item-description">
+                  <h1 class="modal__content-item-description-title">
+                    Port Domenic
+                  </h1>
+                  <p class="modal__content-item-description-content">
+                    Carbohydrate
+                  </p>
+                </div>
+              </li>
+
+              <li class="modal__content-item">
+                <div class="modal__content-item-img">
+                  <img src="./jollof-rice.png" alt="" />
+                </div>
+                <div class="modal__content-item-description">
+                  <h1 class="modal__content-item-description-title">
+                    Carleeville
+                  </h1>
+                  <p class="modal__content-item-description-content">
+                    Fat & Oils
+                  </p>
+                </div>
+              </li>
+
+              <li class="modal__content-item">
+                <div class="modal__content-item-img">
+                  <img src="./gaston.png" alt="" />
+                </div>
+                <div class="modal__content-item-description">
+                  <h1 class="modal__content-item-description-title">
+                    South Chesleyton
+                  </h1>
+                  <p class="modal__content-item-description-content">
+                    Vegetable
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="modal__content-modal">
+              <img src="" alt="" />
+            </div>
+
+            <div class="modal__content-overlay"></div>
+          </div>
+        </div>
+      </div>
+
       <footer class="app__footer">
         <nav class="app__footer-menu">
           <ul>
@@ -176,20 +368,8 @@
           </ul>
         </nav>
       </footer>
-      <div class="meal__menu-modal">
-        <div class="meal__menu-modal-container">
-          <div class="meal__menu">
-            <header class="meal__menu-header">
-              <h1 class="meal__menu-header-title">Today’s Meals
-              </h1>
-              <div class="meal__menu-header-icon">
-                a
-              </div>
-            </header>
-            <div class="meal__menu-main"></div>
-          </div>
-        </div>
-      </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
