@@ -1028,7 +1028,7 @@ button:hover {
 
 .modal__content {
   height: calc(80vh - 86px);
-  background-color: white;
+  background-color: #fff;
   position: relative;
 }
 
