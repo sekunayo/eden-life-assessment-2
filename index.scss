@@ -1,27 +1,68 @@
 @import "./styles/style.scss";
 
 .app {
-  display: grid;
-  grid-template-columns: 28px 1fr 28px;
-
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  position: relative;
   &__container {
+    display: grid;
+    grid-template-columns: 28px 1fr 28px;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    @include responsiveMin(desktop) {
+      grid-template-columns: 80px 1fr 80px;
+    }
+  }
+
+  &__container-inner {
     grid-column: 2/3;
   }
 
   &__header {
     @include row;
+    align-items: center;
+
+    &-notifications {
+      width: 100%;
+      @include flex-space-between;
+      margin-bottom: 30px;
+      padding-top: 9px;
+
+      &-icons {
+        @include grid-column(3, 16px);
+        grid-column-gap: 3px;
+      }
+    }
+
+    &-title {
+      font-family: $PT-Serif;
+      color: $col-dark;
+      font-size: 1.0625rem;
+      line-height: 1.375rem;
+      font-weight: 400;
+    }
+
     &-image {
       margin-right: 10px;
       height: 35px;
       width: 35px;
-      @include border-radius(50%);
-      background-color: pink;
     }
   }
 
   &__schedule {
     @include flex-space-between;
     margin-top: 25px;
+
+    &-title {
+      font-family: $PT-Serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      line-height: 2.3125rem;
+    }
+
     &-button {
       background-color: rgba($col-primary, 0.05);
       @include border-radius(13px);
@@ -50,13 +91,16 @@
       line-height: 1.0625rem;
       font-weight: 400;
       margin-bottom: 3px;
+      font-family: $Cerebri;
     }
 
     &-actual-price {
       font-weight: 600;
       font-size: 0.875rem;
       line-height: 1.0625rem;
+      font-family: $Cerebri;
     }
+
     &-button {
       border-radius: 0px 6px 6px 0px;
       @include flex-column;
@@ -68,8 +112,16 @@
     &-primary {
       background-color: rgba($col-primary, 0.1);
 
+      & .app__info-description-content {
+        width: 80%;
+      }
+
       & button {
         background-color: $col-primary;
+        font-family: $Cerebri;
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 1.0625rem;
       }
     }
 
@@ -102,13 +154,194 @@
     }
   }
 
+  &__daily-schedule {
+    margin-top: 30px;
+    &-container {
+      margin-bottom: 20px;
+      @include grid-row(auto-fit, auto);
+      grid-row-gap: 20px;
+    }
+    &-heading {
+      font-family: $PT-Serif;
+      margin-bottom: 16px;
+      font-size: 1.0625rem;
+      line-height: 1.375rem;
+      font-weight: 400;
+      color: $col-secondary;
+    }
+    &-box {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 10px;
+      align-items: center;
+
+      @include responsiveMin(desktop) {
+        grid-column-gap: 50px;
+      }
+    }
+    &-time {
+      font-weight: 400;
+      font-size: 0.75rem;
+      line-height: 0.9375rem;
+      color: $col-dark-4;
+    }
+    &-content-box {
+      height: 64px;
+      width: 100%;
+      border-radius: 10px;
+      background-color: rgba(#cfecff, 0.5);
+      padding: 13px 4px 13px 15px;
+
+      &-text {
+        color: $col-dark;
+        font-size: 0.9375rem;
+        font-weight: 300;
+        @include row;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        line-height: 1.1875rem;
+      }
+    }
+  }
+
   &__getting-started {
-    padding: 20px 0px 32px 20px;
+    padding: 20px 33px 32px 20px;
     height: auto;
     width: 100%;
     background-color: rgba($col-secondary-2, 0.5);
     margin-top: 30px;
     @include border-radius(6px);
+
+    &-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 35px;
+      width: 100%;
+      height: 100%;
+      margin-top: 30px;
+
+      &-first {
+        @include column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        &-link {
+          color: $col-secondary-5;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-weight: 400;
+          @include row;
+          align-items: center;
+
+          &-icon {
+            width: 14px;
+            height: 9px;
+            & img {
+              width: 14px;
+              height: 9px;
+            }
+          }
+
+          &-text {
+            text-decoration: underline;
+            margin-right: 7px;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            font-weight: 400;
+          }
+        }
+
+        &-icon {
+          margin-bottom: 10px;
+          width: 40px;
+          height: 40px;
+          @include border-radius(50%);
+          background-color: $col-secondary-3;
+          box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+          @include flex-row;
+
+          &-inner {
+            width: 19.39px;
+            height: 17.33px;
+
+            & img {
+              max-width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        &-text {
+          text-align: left;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: $col-dark-3;
+          margin-bottom: 15px;
+        }
+      }
+      &-second {
+        @include column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        &-link {
+          color: $col-primary-3;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-weight: 400;
+          @include row;
+          align-items: center;
+
+          &-icon {
+            width: 14px;
+            height: 9px;
+            & img {
+              width: 14px;
+              height: 9px;
+            }
+          }
+
+          &-text {
+            text-decoration: underline;
+            margin-right: 7px;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            font-weight: 400;
+          }
+        }
+
+        &-icon {
+          margin-bottom: 10px;
+          width: 40px;
+          height: 40px;
+          @include border-radius(50%);
+          background-color: $col-secondary-4;
+          box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+          @include flex-row;
+
+          &-inner {
+            width: 14px;
+            height: 14px;
+
+            & img {
+              max-width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        &-text {
+          text-align: left;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: $col-dark-3;
+          margin-bottom: 15px;
+        }
+      }
+    }
 
     &-subtitle {
       color: $col-dark-3;
@@ -119,9 +352,190 @@
     }
 
     &-title {
+      font-family: $PT-Serif;
+      font-weight: 700;
       color: $col-dark-2;
       font-size: 1.0625rem;
       line-height: 1.25rem;
     }
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    height: 74px;
+    width: 100%;
+    left: 0px;
+    background-color: $col-secondary-6;
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+
+    @include responsiveMin(desktop) {
+      grid-template-columns: 80px 1fr 80px;
+    }
+
+    &-menu {
+      grid-column: 2/3;
+      height: 100%;
+      width: 100%;
+
+      &-item {
+        &-icon {
+          margin-bottom: 4px;
+          @include flex-row;
+        }
+        &-text {
+          color: $col-dark-5;
+          font-size: 0.75rem;
+          font-weight: 300;
+          line-height: 1.375rem;
+        }
+      }
+
+      & ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        & li {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  padding: 1rem;
+  opacity: 0;
+
+  &__content-item-description {
+    &-title {
+      color: $col-dark-5;
+      font-size: 1.125rem;
+      font-weight: 300;
+      line-height: 1.5rem;
+    }
+
+    &-content {
+      color: #6c6c6c;
+      font-size: 0.9375rem;
+      font-weight: 300;
+      line-height: 1.5rem;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    height: 86px;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    overflow-y: hidden;
+    padding: 0 1.5rem;
+  }
+
+  &__header {
+    height: 87px;
+    border-radius: 20px 20px 0 0;
+    background-color: $col-primary-6;
+
+    &-title {
+      height: 100%;
+      @include row;
+      align-items: center;
+      padding-left: 30px;
+      color: $col-dark;
+      font-family: $PT-Serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.625rem;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 115px;
+    background-color: $col-primary-5;
+    @include flex-row;
+    height: 87px;
+    border-radius: 0 20px 0 0;
+
+    & img {
+      height: 25px;
+      width: 25px;
+    }
+  }
+
+  &__content {
+    height: calc(80vh - 86px);
+    background-color: $col-white;
+    position: relative;
+  }
+
+  &__content-items {
+    padding: 1.875rem 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__content-item {
+    padding-left: 1.875rem;
+    height: 3.75rem;
+    display: flex;
+    align-items: center;
+
+    &-img {
+      width: 3.75rem;
+      height: 3.75rem;
+      margin-right: 1.25rem;
+      cursor: pointer;
+      @include border-radius(15px);
+      background-color: $col-secondary-7;
+    }
+  }
+
+  &__content-modal {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+
+    &-image {
+      background-color: $col-secondary-7;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba($color: #000000, $alpha: 0.9);
+    opacity: 0;
+    visibility: hidden;
   }
 }

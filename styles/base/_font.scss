@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Cerebri Sans";
+  src: local("Cerebri Sans SemiBold"), local("Cerebri Sans-SemiBold");
+  src: url("../../assets/fonts/Cerebri\ Sans\ SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cerebri Sans";
+  src: local("Cerebri Sans SemiBold Italic"),
+    local("Cerebri Sans-SemiBold Italic");
+  src: url("../../assets/fonts/Cerebri\ Sans\ SemiBold\ Italic.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Cerebri Sans";
+  src: local("Cerebri Sans Bold"), local("Cerebri Sans-Bold");
+  src: url("../../assets/fonts/Cerebri\ Sans\ Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cerebri Sans";
+  src: local("Cerebri Sans Bold Italic"), local("Cerebri Sans-BoldItalic");
+  src: url("../../assets/fonts/Cerebri\ Sans\ Bold\ Italic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Cerebri Sans";
+  src: local("Cerebri Sans ExtraBold"), local("Cerebri Sans-ExtraBold");
+  src: url("../../assets/fonts/Cerebri\ Sans\ ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cerebri Sans";
+  src: local("Cerebri Sans ExtraBold Italic"),
+    local("Cerebri Sans-ExtraBoldItalic");
+  src: url("../../assets/fonts/Cerebri\ Sans\ ExtraBold\ Italic.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
