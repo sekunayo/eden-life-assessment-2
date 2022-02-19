@@ -1,87 +1,3 @@
-// let viewMeals = document.querySelector("#viewMeals");
-// let mealContainer = document.querySelector(".meal__menu-main");
-// let closeIcon = document.querySelector(".meal__menu-header-icon");
-// let header = document.querySelector(".meal__menu-header");
-
-// viewMeals.addEventListener("click", (e) => {
-//   const tl = gsap.timeline();
-//   tl.to(".meal__menu-modal",{
-//     opacity: 1,
-//     zIndex: 1,
-//     duration: 0.3
-//   }).to(".meal__menu-modal-container", {
-//     top: "10%"
-//   }).to(".meal__menu-header",{
-//     opacity: 1
-//   },0.3).to(".meal__menu-main", {
-//     height: "100%",
-//     opacity: 1,
-//   });
-
-//   // setTimeout(() => {
-//   //   mealContainer.classList.add("meal-active");
-//   // }, 1000);
-// });
-
-// closeIcon.addEventListener("click", () => {
-//   let modal = viewMeals.nextElementSibling;
-//   mealContainer.classList.remove("meal-active");
-//   // setTimeout(() => {
-//   //   modal.style.display = "none";
-//   // }, 1000);
-// });
-
-// //images animation
-
-// let images = document.querySelectorAll(".meal__menu-box-image");
-
-// for (let i = 0; i < images.length; i++) {
-//   images[i].addEventListener("click", (e) => {
-//     let parent = e.target.parentElement;
-//     if (!isTweening && index !== 0) return;
-
-//     //Get card dimensions
-//     let rect = parent.current.getBoundingClientRect();
-//     let initialY = rect.height - rect.y + 24;
-//     let x = rect.x - 24;
-//     let finalY = window.innerHeight / 2 - rect.top - rect.height / 2;
-
-//     //Set dummy div with the dimensions, position and background image of clicked card
-//     gsap.set("#route-image", {
-//       x,
-//       y: initialY,
-//       zIndex: 2,
-//       width: rect.width,
-//       height: rect.height,
-//       backgroundImage: `url('${image}')`,
-//       backgroundSize: "cover",
-//       backgroundRepeat: "no-repeat",
-//       ease: "ease.inOut",
-//     });
-
-//     //Move dummy image to desired position
-//     gsap.to("#route-image", {
-//       y: finalY,
-
-//       onStart: () => {
-//         handleDimensions();
-//         setIsTweening(true);
-//         gsap.to(["#card__container", ".hero"], {
-//           opacity: 0,
-//           duration: 0.9,
-//           ease: "expo.inOut",
-//         });
-//       },
-//       delay: 0.3,
-//       duration: 1.5,
-//       ease: "expo.inOut",
-//     });
-//   });
-// }
-
-
-
-
 const modalTl = gsap.timeline({ defaults: { duration: 0.4 } });
 const imgTl = gsap.timeline({ defaults: { duration: 0.4 } });
 
@@ -101,6 +17,7 @@ img.forEach((img) => img.addEventListener("click", expandImage));
 imgContainerOverlay.addEventListener("click", () => imgTl.reverse());
 
 function showModal() {
+  modalTl.clear();
   modalTl.play();
   modalTl.set(".modal", { opacity: 1, zIndex: 1 });
 

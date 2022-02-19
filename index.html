@@ -11,6 +11,16 @@
     <section class="app">
       <div class="app__container">
         <div class="app__container-inner">
+
+          <div class="app__header-notifications">
+             <p class="app__header-notifications-time">9:41</p>
+             <div class="app__header-notifications-icons">
+               <img src="./assets/images/cellular- connection.png" alt="cellular-connection"/>
+               <img src="./assets/images/wifi.png" alt="wifi"/>
+               <img src="./assets/images/battery.png" alt="battery"/>
+             </div>
+          </div>
+
           <header class="app__header">
             <div class="app__header-image">
               <img src="./assets/images/profile.png" alt="profile" />
@@ -61,100 +71,6 @@
             </button>
           </div>
 
-          <!-- <div class="meal__menu-modal">
-            <div class="meal__menu-modal-container">
-              <div class="meal__menu">
-                <header class="meal__menu-header">
-                  <h1 class="meal__menu-header-title">Today’s Meals</h1>
-                  <button type="button" aria-label="close button" class="meal__menu-header-icon">a</button>
-                </header>
-                <div class="meal__menu-main">
-                  <div class="meal__menu-box">
-                    <div class="meal__menu-box-image">
-                      <img src="./assets/images/akara.png" alt="akara" />
-                    </div>
-                    <div class="meal__menu-box-description">
-                      <h1 class="meal__menu-box-description-title">
-                        Akara & Pap
-                      </h1>
-                      <p class="meal__menu-box-description-content">
-                        Carbohydrate
-                      </p>
-                    </div>
-                  </div>
-                  <div class="meal__menu-box">
-                    <div class="meal__menu-box-image">
-                      <img src="./assets/images/jollof-rice.png" alt="jollof" />
-                    </div>
-                    <div class="meal__menu-box-description">
-                      <h1 class="meal__menu-box-description-title">
-                        Jollof Rice
-                      </h1>
-                      <p class="meal__menu-box-description-content">Protein</p>
-                    </div>
-                  </div>
-                  <div class="meal__menu-box">
-                    <div class="meal__menu-box-image">
-                      <img src="./assets/images/gaston.png" alt="gaston" />
-                    </div>
-                    <div class="meal__menu-box-description">
-                      <h1 class="meal__menu-box-description-title">
-                        Gastonton
-                      </h1>
-                      <p class="meal__menu-box-description-content">
-                        Carbohydrate
-                      </p>
-                    </div>
-                  </div>
-                  <div class="meal__menu-box">
-                    <div class="meal__menu-box-image">
-                      <img src="./assets/images/port.png" alt="port" />
-                    </div>
-                    <div class="meal__menu-box-description">
-                      <h1 class="meal__menu-box-description-title">
-                        Port Domenic
-                      </h1>
-                      <p class="meal__menu-box-description-content">
-                        Carbohydrate
-                      </p>
-                    </div>
-                  </div>
-                  <div class="meal__menu-box">
-                    <div class="meal__menu-box-image">
-                      <img
-                        src="./assets/images/careville.png"
-                        alt="carleeville"
-                      />
-                    </div>
-                    <div class="meal__menu-box-description">
-                      <h1 class="meal__menu-box-description-title">
-                        Carleeville
-                      </h1>
-                      <p class="meal__menu-box-description-content">
-                        Fat & Oils
-                      </p>
-                    </div>
-                  </div>
-                  <div class="meal__menu-box">
-                    <div class="meal__menu-box-image">
-                      <img
-                        src="./assets/images/south.png"
-                        alt="South Chesleyton"
-                      />
-                    </div>
-                    <div class="meal__menu-box-description">
-                      <h1 class="meal__menu-box-description-title">
-                        South Chesleyton
-                      </h1>
-                      <p class="meal__menu-box-description-content">
-                        Vegetable
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
           <div class="app__getting-started">
             <h2 class="app__getting-started-title">Getting Started</h2>
             <p class="app__getting-started-subtitle">
@@ -232,14 +148,16 @@
 
       <div class="modal">
         <div class="modal__container">
-          <button class="modal__close">Close</button>
+          <button type="button" aria-label="modal close" class="modal__close">
+            <img src="./assets/images/close.png" alt="close" />
+          </button>
           <div class="modal__header">
             <h1 class="modal__header-title">Today’s Meals</h1>
           </div>
           <div class="modal__content">
             <ul class="modal__content-items">
               <li class="modal__content-item">
-                <div class="modal__content-item-img blue-background">
+                <div class="modal__content-item-img">
                   <img src="./assets/images/akara.png" alt="akara" />
                 </div>
                 <div class="modal__content-item-description">
@@ -252,8 +170,11 @@
                 </div>
               </li>
               <li class="modal__content-item">
-                <div class="modal__content-item-img pink-background">
-                  <img src="./assets/images/jollof-rice.png" alt="jollof rice" />
+                <div class="modal__content-item-img">
+                  <img
+                    src="./assets/images/jollof-rice.png"
+                    alt="jollof rice"
+                  />
                 </div>
                 <div class="modal__content-item-description">
                   <h1 class="modal__content-item-description-title">
@@ -264,7 +185,7 @@
               </li>
               <li class="modal__content-item">
                 <div class="modal__content-item-img">
-                  <img src="./jollof-rice.png" alt="" />
+                  <img src="./assets/images/gaston.png" alt="gaston" />
                 </div>
                 <div class="modal__content-item-description">
                   <h1 class="modal__content-item-description-title">
@@ -277,7 +198,7 @@
               </li>
               <li class="modal__content-item">
                 <div class="modal__content-item-img">
-                  <img src="./gaston.png" alt="" />
+                  <img src="./assets/images/port.png" alt="port" />
                 </div>
                 <div class="modal__content-item-description">
                   <h1 class="modal__content-item-description-title">
@@ -291,7 +212,7 @@
 
               <li class="modal__content-item">
                 <div class="modal__content-item-img">
-                  <img src="./jollof-rice.png" alt="" />
+                  <img src="./assets/images/careville.png" alt="careville" />
                 </div>
                 <div class="modal__content-item-description">
                   <h1 class="modal__content-item-description-title">
@@ -305,7 +226,7 @@
 
               <li class="modal__content-item">
                 <div class="modal__content-item-img">
-                  <img src="./gaston.png" alt="" />
+                  <img src="./assets/images/south.png" alt="south" />
                 </div>
                 <div class="modal__content-item-description">
                   <h1 class="modal__content-item-description-title">
@@ -319,7 +240,9 @@
             </ul>
 
             <div class="modal__content-modal">
-              <img src="" alt="" />
+              <div class="modal__content-modal-image">
+                <img src="" alt="" />
+              </div>
             </div>
 
             <div class="modal__content-overlay"></div>
